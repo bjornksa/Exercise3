@@ -13,16 +13,16 @@ send_sock.connect((UDP_IP, UDP_PORT))
 recive_sock.bind(("", UDP_PORT))
 
 
-while True:
-    print("Sending 8...")
-    
-    
-    send_sock.send(b"MESSAGE"*100)
-    data, addr = recive_sock.recvfrom(1024) # buffer size is 1024 bytes
+#while True:
+print("Sending ...")
 
 
-    print("received message:", data)
-    sleep(0.5)
+send_sock.send(b"MESSAGE")
+data, addr = recive_sock.recvfrom(1024) # buffer size is 1024 bytes
+
+
+print("received message:", data)
+sleep(0.5)
 
 send_sock.close()
 recive_sock.close()
